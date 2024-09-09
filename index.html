@@ -46,12 +46,24 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hello, World!</h1>
-        <button>Click Me</button>
+        <h1 id="greeting">¡Hola, bienvenido a mi página web!</h1>
+        <button id="changeTextButton">Cambiar Texto</button>
     </div>
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('changeTextButton').addEventListener('click', function() {
+            const greetingElement = document.getElementById('greeting');
+            if (greetingElement.textContent === '¡Hola, bienvenido a mi página web!') {
+                greetingElement.textContent = '¡Gracias por visitar!';
+            } else {
+                greetingElement.textContent = '¡Hola, bienvenido a mi página web!';
+            }
+        });
+    </script>
 </body>
 </html>
